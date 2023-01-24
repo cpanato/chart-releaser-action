@@ -25,6 +25,12 @@ inputs:
   skip_packaging:
     description: "skip the packaging option (do your custom packaging before running this action"
     required: false
+outputs:
+  changed_charts:
+    description: "A comma-separated list of charts that were released on this run. Will be an empty string if no updates were detected, will be unset if `--skip_packaging` is used: in the latter case your custom packaging step is responsible for setting its own outputs if you need them."
+  chart_version:
+    description: "The version of the most recently generated charts; will be set even if no charts have been updated since the last run."
+
 
 runs:
   using: composite
