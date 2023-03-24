@@ -82,10 +82,10 @@ main() {
 
             release_charts
             update_index
-            echo "changed_charts=$(IFS=, ; echo "${changed_charts[*]}")" >> "${GITHUB_OUTPUT}"
+            echo "changed_charts=$(IFS=, ; echo "${changed_charts[*]}")" > changed_charts.txt
         else
             echo "Nothing to do. No chart changes detected."
-            echo "changed_charts=" >> "${GITHUB_OUTPUT}"
+            echo "changed_charts=" > changed_charts.txt
         fi
     else
         install_chart_releaser
@@ -95,9 +95,9 @@ main() {
         update_index
     fi
 
-    echo "chart_version=${latest_tag}" >> "${GITHUB_OUTPUT}"
-    echo "*****"
-    env
+    echo "chart_version=${latest_tag}" > chart_version.txt
+    cat chart_version.txt
+    cat changed_charts.txt
     popd > /dev/null
 }
 
