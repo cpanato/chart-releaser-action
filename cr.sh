@@ -96,7 +96,8 @@ main() {
     fi
 
     echo "chart_version=${latest_tag}" >> "${GITHUB_OUTPUT}"
-
+    echo "*****"
+    env
     popd > /dev/null
 }
 

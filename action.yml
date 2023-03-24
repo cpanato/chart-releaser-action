@@ -68,4 +68,6 @@ runs:
         fi
 
         "$GITHUB_ACTION_PATH/cr.sh" "${args[@]}"
+
+        env
       shell: bash
