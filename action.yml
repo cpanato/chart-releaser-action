@@ -98,7 +98,7 @@ runs:
         echo "${{ inputs.packages_with_index }}"
 
         if [[ -n "${{ inputs.packages_with_index }}" ]]; then
-           echo "should not come here"
+           echo "should not come here "
             args+=(--packages-with-index "${{ inputs.packages_with_index }}")
         fi
 
