@@ -333,7 +333,7 @@ release_charts() {
   if [[ -n "$pages_branch" ]]; then
     args+=(--pages-branch "$pages_branch")
   fi
-  echo "${packages_with_index}"
+  echo "${packages_with_index} - ${args[@]}"
   echo 'Releasing charts...'
   cr upload "${args[@]}"
 }
