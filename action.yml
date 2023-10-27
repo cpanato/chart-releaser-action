@@ -16,6 +16,10 @@ inputs:
     description: The charts directory
     required: false
     default: charts
+  skip_cr_install:
+    description: "Whether to skip installing cr tool"
+    required: false
+    default: false
   install_dir:
     description: "Where to install the cr tool"
     required: false
@@ -89,6 +93,8 @@ runs:
         if [[ -n "${{ inputs.mark_as_latest }}" ]]; then
             args+=(--mark-as-latest "${{ inputs.mark_as_latest }}")
         fi
+
+        echo "${{ inputs.packages_with_index }}"
 
         if [[ -n "${{ inputs.packages_with_index }}" ]]; then
             args+=(--packages-with-index "${{ inputs.packages_with_index }}")
