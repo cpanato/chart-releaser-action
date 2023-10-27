@@ -322,7 +322,7 @@ release_charts() {
   if [[ -n "$config" ]]; then
     args+=(--config "$config")
   fi
-  if [[ "$packages_with_index" = false ]]; then
+  if [[ "$packages_with_index" = true ]]; then
     args+=(--packages-with-index --push --skip-existing)
   elif [[ -n "$skip_existing" ]]; then
     args+=(--skip-existing)
